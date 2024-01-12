@@ -1,1 +1,125 @@
-﻿@RenderBody()
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Connect Plus</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/AdminPage/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/AdminPage/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/AdminPage/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="~/AdminPage/vendors/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/AdminPage/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/AdminPage/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/AdminPage/images/favicon.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item nav-category">Main</li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Home">
+                            <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                            <span class="menu-title">Main</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+                            <span class="menu-title">UI Elements</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/icons/mdi.html">
+                            <span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
+                            <span class="menu-title">Icons</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/forms/basic_elements.html">
+                            <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+                            <span class="menu-title">Forms</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/charts/chartjs.html">
+                            <span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
+                            <span class="menu-title">Charts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Product">
+                            <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                            <span class="menu-title">Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                            <span class="icon-bg"><i class="mdi mdi-lock menu-icon"></i></span>
+                            <span class="menu-title">User Pages</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="auth">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+                            </ul>
+                        </div>
+                    </li>                    
+                    <li class="nav-item sidebar-user-actions">
+                        <div class="sidebar-user-menu">
+                            <a href="#" class="nav-link">
+                                <i class="mdi mdi-logout menu-icon"></i>
+                                <span class="menu-title">Log Out</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            @RenderBody()
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/AdminPage/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="~/AdminPage/vendors/chart.js/Chart.min.js"></script>
+    <script src="~/AdminPage/vendors/jquery-circle-progress/js/circle-progress.min.js"></script>
+    <script src="~/AdminPage/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="~/AdminPage/js/off-canvas.js"></script>
+    <script src="~/AdminPage/js/hoverable-collapse.js"></script>
+    <script src="~/AdminPage/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="~/AdminPage/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+</body>
+</html>

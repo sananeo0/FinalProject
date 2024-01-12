@@ -1,67 +1,47 @@
-﻿<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+﻿@model AccountLoginVM
+@{
+	Layout = "_LoginLayout";
+}
+<div class="limiter">
+	<div class="container-login100">
+		<div class="wrap-login100">
+			<div class="login100-form-title">
+				<span class="login100-form-title-1">
+					Sign In
+				</span>
+			</div>
 
-    <link rel="stylesheet" href="~/LoginPage/fonts/icomoon/style.css">
+			<form class="login100-form validate-form" asp-controller="Account" asp-action="Login" method="post">
+				<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+					<span class="label-input100">Username</span>
+					<input class="input100" type="text" name="email" placeholder="Enter email" asp-for="Email">
+					<span class="focus-input100"></span>
+					<span asp-validation-for="Email" style="color:red"></span>
+				</div>
 
-    <link rel="stylesheet" href="~/LoginPage/css/owl.carousel.min.css">
+				<div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
+					<span class="label-input100">Password</span>
+					<input class="input100" type="password" name="pass" placeholder="Enter password" asp-for="Password">
+					<span class="focus-input100"></span>
+					<span asp-validation-for="Password" style="color:red"></span>
+				</div>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="~/LoginPage/css/bootstrap.min.css">
-    
-    <!-- Style -->
-    <link rel="stylesheet" href="~/LoginPage/css/style.css">
+				<div class="flex-sb-m w-full p-b-30">
+					<div class="contact100-form-checkbox">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" asp-for="RememberMe">
+						<label class="label-checkbox100" for="ckb1">
+							Remember me
+						</label>
+					</div>
 
-    <title>Login</title>
-  </head>
-  <body>
-  
+				</div>
 
-  <div class="d-lg-flex half">
-        <div class="bg order-1 order-md-2" style="background-image: url('');"></div>
-    <div class="contents order-2 order-md-1">
-
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-7">
-            <h3>Login to <strong>Colorlib</strong></h3>
-            <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
-            <form action="#" method="post">
-              <div class="form-group first">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
-              </div>
-              <div class="form-group last mb-3">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" placeholder="Your Password" id="password">
-              </div>
-              
-              <div class="d-flex mb-5 align-items-center">
-                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
-                  <input type="checkbox" checked="checked"/>
-                  <div class="control__indicator"></div>
-                </label>
-                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
-              </div>
-
-              <input type="submit" value="Log In" class="btn btn-block btn-primary">
-
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-  </div>
-   
-    <script src="~/LoginPage/js/jquery-3.3.1.min.js"></script>
-    <script src="~/LoginPage/js/popper.min.js"></script>
-    <script src="~/LoginPage/js/bootstrap.min.js"></script>
-    <script src="~/LoginPage/js/main.js"></script>
-  </body>
-</html>
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn" type="submit">
+						Login
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

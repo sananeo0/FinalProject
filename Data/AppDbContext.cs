@@ -1,6 +1,7 @@
 ﻿using FinalProject.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.Pkcs;
 
 namespace FinalProject.Data
 {
@@ -10,6 +11,15 @@ namespace FinalProject.Data
         {
         }
 
-        DbSet<AppUser>AppUsers {  get; set; }
+        public  DbSet<AppUser>AppUsers {  get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Subscription> subscriptions { get; set; }
+
+
+
     }
 }

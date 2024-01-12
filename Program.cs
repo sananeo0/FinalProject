@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject
 {
+
     public class Program
     {
         public static async Task Main(string[] args)
@@ -22,15 +23,16 @@ namespace FinalProject
 
             builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
             {
-                opt.Password.RequiredLength = 5;
+                opt.Password.RequiredLength = 4;
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireLowercase = false;
             }).AddEntityFrameworkStores<AppDbContext>();
 
+
             var app = builder.Build();
 
-
+            //await DataSeed.InitializeAsync(app.Services);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
