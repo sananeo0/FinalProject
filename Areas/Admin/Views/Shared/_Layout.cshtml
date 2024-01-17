@@ -73,6 +73,34 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Subscription">
+                            <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                            <span class="menu-title">Emails</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Checkout">
+                            <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                            <span class="menu-title">Checkout</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Color">
+                            <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                            <span class="menu-title">Color</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Brand">
+                            <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                            <span class="menu-title">Brands</span>
+                        </a>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Category">
+                            <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                            <span class="menu-title">Catogries</span>
+                        </a>
+                    <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                             <span class="icon-bg"><i class="mdi mdi-lock menu-icon"></i></span>
                             <span class="menu-title">User Pages</span>
@@ -90,7 +118,7 @@
                     </li>                    
                     <li class="nav-item sidebar-user-actions">
                         <div class="sidebar-user-menu">
-                            <a href="#" class="nav-link">
+                            <a asp-action="Logout" asp-controller="Account" class="nav-link">
                                 <i class="mdi mdi-logout menu-icon"></i>
                                 <span class="menu-title">Log Out</span>
                             </a>

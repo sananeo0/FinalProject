@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -68,7 +69,7 @@
             <nav class="amado-nav">
                 <ul>
                     <li class="active"><a asp-action="Index" asp-controller="Home">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
+                    <li><a asp-action="Index" asp-controller="Shop">Shop</a></li>
                     <li><a href="product-details.html">Product</a></li>
                     <li><a href="cart.html">Cart</a></li>
                     <li><a asp-action="Index" asp-controller="Checkout">Checkout</a></li>
@@ -113,10 +114,7 @@
                 <!-- Newsletter Form -->
                 <div class="col-12 col-lg-6 col-xl-5">
                     <div class="newsletter-form mb-100">
-                        <form action="#" method="post">
-                            <input type="email" name="email" class="nl-email" placeholder="Your E-mail">
-                            <input type="submit" value="Subscribe">
-                        </form>
+                        @await Component.InvokeAsync("Subscriptions")
                     </div>
                 </div>
             </div>
@@ -157,7 +155,7 @@
                                             <a class="nav-link" asp-action="Index" asp-controller="Home">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="shop.html">Shop</a>
+                                            <a class="nav-link" asp-action="Index" asp-controller="Shop">Shop</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="product-details.html">Product</a>

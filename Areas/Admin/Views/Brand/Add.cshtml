@@ -1,0 +1,29 @@
+﻿@model BrandAddVM
+
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hoverable Table</h4>
+            <p class="card-description">
+                Add class <code>.table-hover</code>
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th> Brand Name </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <form method="post" asp-action="Add" asp-controller="Brand">
+                                <input type="text" asp-for="Name" placeholder="New brand name" />
+                                <button type="submit" class="badge badge-success">ADD</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

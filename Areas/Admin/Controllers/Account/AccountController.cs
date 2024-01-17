@@ -1,5 +1,6 @@
 ﻿using FinalProject.Areas.Admin.Models;
 using FinalProject.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,7 +34,7 @@ namespace FinalProject.Areas.Admin.Controllers.Account
             if (User.Identity.IsAuthenticated) return RedirectToAction("Index", "Home");
             if (!ModelState.IsValid) return View(model);
 
-            var existingUser = await _userManager.FindByNameAsync(model.Email);
+            var existingUser = await _userManager.FindByEmailAsync(model.Email);
 
             if (existingUser is null)
             {
@@ -52,5 +53,11 @@ namespace FinalProject.Areas.Admin.Controllers.Account
 
             return RedirectToAction("Index", "Home");
         }
-    }
+		public async Task<IActionResult> LogOut()
+		{
+			await _signInManager.SignOutAsync();
+			return RedirectToAction(nameof(Login));
+		}
+	}
+
 }

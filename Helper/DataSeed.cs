@@ -12,7 +12,7 @@ namespace FinalProject.Helper
             {
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-                string[] roles = new[] { "Admin" };
+				string[] roles = ["Admin"];
 
                 foreach (string role in roles)
                 {
@@ -34,7 +34,7 @@ namespace FinalProject.Helper
                 var existingUser = await userManager.FindByNameAsync("admin@gmail.com");
                 if (existingUser is not null) return;
 
-                await userManager.CreateAsync(user, "admin@gmail.com");
+                await userManager.CreateAsync(user, "admin1234");
                 await userManager.AddToRoleAsync(user, roles[0]);
 
                 return;

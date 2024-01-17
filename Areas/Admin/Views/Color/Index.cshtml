@@ -1,0 +1,40 @@
+﻿@model ColorIndexVM
+
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hoverable Table</h4>
+            <p class="card-description">
+                Add class <code>.table-hover</code>
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th> Color ID </th>
+                        <th> Color Name </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var color in Model.Colors)
+                    {
+                        <tr>
+                            <td>@color.Id</td>
+                            <td> @color.Name </td>
+                            <td>
+                                <a class="badge badge-warning" asp-action="Update" asp-controller="Color" asp-route-id="@color.Id">Update</a>
+                            </td>
+                            <td>
+                                <a asp-action="Delete" asp-controller="Color" asp-route-id="@color.Id" class="badge badge-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>
+                                <a asp-action ="Add" asp-controller="Color" class="badge badge-success">ADD</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

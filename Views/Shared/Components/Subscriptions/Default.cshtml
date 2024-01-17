@@ -1,0 +1,6 @@
+﻿@model SubscriptionSubscribeVM
+<form asp-controller="Subscription" asp-action="Subscribe" method="post">
+    <input type="Email" name="Email" class="nl-email" placeholder="Your E-mail">
+    <span asp-validation-for="Email" class="text-danger"></span>
+    <input asp-for="Email" type="submit" value="Subscribe">
+</form>

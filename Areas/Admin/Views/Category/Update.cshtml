@@ -1,0 +1,29 @@
+﻿@model CategoryUpdateVM
+
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hoverable Table</h4>
+            <p class="card-description">
+                Add class <code>.table-hover</code>
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th> Category Name </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <form method="post" asp-action="Update" asp-controller="Category">
+                                <input type="text" id="Name" name="Name" asp-for="Name" class="form-control" value="@Model.Name" />
+                                <button type="submit" class="badge badge-warning">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

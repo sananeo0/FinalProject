@@ -1,0 +1,41 @@
+﻿@model CategoryIndexVM
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hoverable Table</h4>
+            <p class="card-description">
+                Add class <code>.table-hover</code>
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th> Category Id  </th>
+                        <th> Category Name  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <tr>
+                            <td>@category.Id</td>
+                            <td> @category.Name </td>
+                            <td>
+                                  <a asp-action ="Update" asp-controller="Category" asp-route-id="@category.Id" class="badge badge-warning">Update</a>
+                            </td>
+                            <td>
+                                <a asp-action="Delete" asp-controller="Category"  asp-route-id="@category.Id" class="badge badge-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>
+                            <form asp-action="Add" asp-controller="Category">
+                                <button type="submit" class="badge badge-success">ADD</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

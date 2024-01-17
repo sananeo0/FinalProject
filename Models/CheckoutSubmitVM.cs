@@ -1,16 +1,28 @@
-﻿namespace FinalProject.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FinalProject.Models
 {
 	public class CheckoutSubmitVM
 	{
-		public string FirstName { get; set; }
-		public string LastName { get; set; }
-		public string CompanyName { get; set; }
-		public string Email { get; set; }
-		public string Country { get; set; }
-		public string Address { get; set; }
-		public string Town { get; set; }
-		public string ZipCode { get; set; }
-		public string PhoneNumber { get; set; }
-		public string Comment { get; set; }
+        [Required]
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
+        [Required]
+        public string CompanyName { get; set; }
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Country { get; set; }
+        [Required]
+        public string Address { get; set; }
+        [Required]
+        public string Town { get; set; }
+        [Required]
+        public string ZipCode { get; set; }
+        [Required]
+        public string PhoneNumber { get; set; }
+        [Required]
+        public string Comment { get; set; }
 	}
 }

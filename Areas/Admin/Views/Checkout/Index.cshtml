@@ -1,0 +1,39 @@
+﻿@model CheckoutIndexVM
+
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Basic Table</h4>
+            <p class="card-description">
+                Add class <code>.table</code>
+            </p>
+               <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th> # </th>
+                            @foreach (var property in typeof(CheckoutIndexVM).GetProperties())
+                            {
+                                <th> @property.Name </th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.FirstName.Count; i++)
+                        {
+                            <tr>
+                                <td> @i </td>
+                                @foreach (var property in typeof(CheckoutIndexVM).GetProperties())
+                                {
+                                    var propertyValue = property.GetValue(Model, null) as List<string>;
+                                    <td> @(propertyValue != null && i < propertyValue.Count ? propertyValue[i] : "") </td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+               </div>
+        </div>
+    </div>
+</div>

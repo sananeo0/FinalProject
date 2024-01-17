@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace FinalProject.Areas.Admin.Controllers.Product
+namespace FinalProject.Controllers
 {
-    public class ProductController : Controller
+    public class ShopController : Controller
     {
-        [Area("Admin")]
         public IActionResult Index()
         {
             return View();

@@ -17,9 +17,9 @@ namespace FinalProject.Data
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Brand> Brands { get; set; }
-        public DbSet<Subscription> subscriptions { get; set; }
-
-
+        public DbSet<Subscription> Subscriptions { get; set; }
+        public  DbSet<Checkout> Checkouts { get; set; }
+        public DbSet<Color> Color { get; set; }
 
     }
 }

@@ -32,7 +32,7 @@ namespace FinalProject
 
             var app = builder.Build();
 
-            //await DataSeed.InitializeAsync(app.Services);
+            await DataSeed.InitializeAsync(app.Services);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
