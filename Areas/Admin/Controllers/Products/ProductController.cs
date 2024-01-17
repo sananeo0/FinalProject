@@ -1,5 +1,6 @@
 ﻿using FinalProject.Areas.Admin.Models;
 using FinalProject.Data;
+using FinalProject.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,10 +10,12 @@ namespace FinalProject.Areas.Admin.Controllers.Products
     public class ProductController : Controller
     {
         private readonly AppDbContext _dbContext;
+        private readonly FileUploadService _fileUploadService;
 
         public ProductController(AppDbContext dbContext)
         {
             _dbContext = dbContext;
+
         }
 
         public IActionResult Index()
@@ -25,6 +28,14 @@ namespace FinalProject.Areas.Admin.Controllers.Products
             };
 
             return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.Brands = await _dbContext.Brands.ToListAsync();
+            ViewBag.Categories = await _dbContext.Categories.ToListAsync();
+            ViewBag.Colors = await _dbContext.Color.ToListAsync();
+            return View();
         }
         public IActionResult Add()
         {

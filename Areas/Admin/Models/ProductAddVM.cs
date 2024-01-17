@@ -22,6 +22,9 @@ namespace FinalProject.Areas.Admin.Models
         public int CategoryId { get; set; }
         public List<Category> Categories { get; set; }
 
+        public int BrandID { get; set; }
+        public Brand Brand { get; set; }
+
         public int ColorId { get; set; }
         public List <Color> Colors { get; set; }
 

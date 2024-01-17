@@ -7,9 +7,9 @@ namespace FinalProject.Views.Shared.Components.Subscriptions
 {
     public class SubscriptionsViewComponent:ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(List<Subscription> model)
         {
-            return View();
+            return View(model);
         }
 
     }

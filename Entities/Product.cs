@@ -37,6 +37,9 @@ namespace FinalProject.Entities
         public int ColorId { get; set; }
         public Color Color { get; set; }
 
+        public int BrandID { get; set; }
+        public Brand Brand { get; set; }
+
 
     }
 }
